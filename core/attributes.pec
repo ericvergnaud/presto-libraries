@@ -1,0 +1,3 @@
+define id as: Integer attribute
+define name as: Text attribute
+define text as: Text attribute
