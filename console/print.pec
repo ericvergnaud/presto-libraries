@@ -47,27 +47,27 @@ define printLine as: method receiving: any value and any writer doing:
 	print '\n' with writer as writer
 
 define "print a text" as: test method doing:
-	w = PrintWriter
+	w = mutable PrintWriter
 	print "Hello" with w as writer
 	print " John" with w as writer
 and expecting: 
 	w.text = "Hello John"
 
 define "print an integer" as: test method doing:
-	w = PrintWriter
+	w = mutable PrintWriter
 	print 12345 with w as writer
 and expecting: 
 	w.text = "12345" 
 
 define "printLine a text" as: test method doing:
-	w = PrintWriter
+	w = mutable PrintWriter
 	print "Hello" with w as writer
 	printLine " John" with w as writer
 and expecting: 
 	w.text = "Hello John\n"
 
 define "printLine an integer" as: test method doing:
-	w = PrintWriter
+	w = mutable PrintWriter
 	printLine 12345 with w as writer
 and expecting: 
 	w.text = "12345\n" 
