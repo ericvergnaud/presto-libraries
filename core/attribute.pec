@@ -1,34 +1,34 @@
-define name as: Text attribute
+define name as Text attribute
 
-define Attribute as: native category with attribute: name, and bindings:
+define Attribute as native category with attribute name, and bindings:
 
 	define category bindings as:
-		Java: presto.declaration.AttributeDeclaration
-		C#: presto.declaration.AttributeDeclaration
-		Python2: AttributeDeclaration from module: presto.declaration.AttributeDeclaration
-		Python3: AttributeDeclaration from module: presto.declaration.AttributeDeclaration
-		JavaScript: AttributeDeclaration from module: presto/declaration/AttributeDeclaration.js
+		Java: prompto.declaration.AttributeDeclaration
+		C#: prompto.declaration.AttributeDeclaration
+		Python2: AttributeDeclaration from module: prompto.declaration.AttributeDeclaration
+		Python3: AttributeDeclaration from module: prompto.declaration.AttributeDeclaration
+		JavaScript: AttributeDeclaration from module: prompto/declaration/AttributeDeclaration.js
 
-define findAttribute as: native method receiving: Text name returning: Attribute doing:
+define findAttribute as native method receiving Text name returning Attribute doing:
 	Java: return $context.findAttribute(name);
 	C#: return $context.findAttribute(name);
 	Python2: return $context.findAttribute(name)
 	Python3: return $context.findAttribute(name)
 	JavaScript: return $context.findAttribute(name);
 
-define "findAttribute id" as: test method doing:
+define "findAttribute id" as test method doing:
 	a = findAttribute "id"
 and expecting: 
 	a is an Attribute
 	a.name = "id"
 
-define "findAttribute name" as: test method doing:
+define "findAttribute name" as test method doing:
 	a = findAttribute "name"
 and expecting: 
 	a is an Attribute
 	a.name = "name" 
 
-define "findAttribute text" as: test method doing:
+define "findAttribute text" as test method doing:
 	a = findAttribute "text"
 and expecting: 
 	a is an Attribute

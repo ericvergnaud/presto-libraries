@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="concat prompto libraries" default="default">
+    <description>
+            a project to concat all prompto library files into a single one
+    </description>
+
+    <target name="default" description="sole target">
+        <concat destfile="core.pec">
+            <path>
+               <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
+             </path>        	
+            <path>
+               <fileset dir="${eclipse.workspace}/console" includes="*.pec"/>
+             </path>        	
+            <filterchain>
+              <expandproperties/>
+            </filterchain>
+        </concat>
+    </target>
+
+
+</project>

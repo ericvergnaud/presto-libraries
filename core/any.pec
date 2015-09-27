@@ -1,21 +1,21 @@
-define id as: Any attribute
-define text as: Text attribute
+define id as Any attribute
+define text as Text attribute
 
-define Any as: native category with attributes: id and text, and bindings:
+define Any as native category with attributes id and text, and bindings:
 
 	define category bindings as:
-		Java: presto.value.Any
-		C#: presto.value.Any
-		Python2: Any from module: presto.value.Any
-		Python3: Any from module: presto.value.Any
-		JavaScript: Any from module: presto/value/Any.js
+		Java: prompto.value.Any
+		C#: prompto.value.Any
+		Python2: Any from module: prompto.value.Any
+		Python3: Any from module: prompto.value.Any
+		JavaScript: Any from module: prompto/value/Any.js
 
 and methods: 
 
 	define id getter doing:
 		return nativeId
 	
-	define nativeId as: native method returning: any doing:
+	define nativeId as native method returning any doing:
 		Java: return System.identityHashCode(self);
 		C#: return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(self);
 		Python2: return id(self)
@@ -25,7 +25,7 @@ and methods:
 	define text getter doing:
 		return text if text is not nothing else nativeText	
 	
-	define nativeText as: native method returning: Text doing:
+	define nativeText as native method returning Text doing:
 		Java: return self.toString();
 		C#: return self.ToString();
 		Python2: return str(self)
