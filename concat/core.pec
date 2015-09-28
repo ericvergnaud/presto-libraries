@@ -72,6 +72,7 @@ define Error as enumerated category with attributes name and text, and symbols:
 	INDEX_OUT_OF_RANGE with "Index out of range!" as text
 	NULL_REFERENCE with "Null reference!" as text
 	NOT_MUTABLE with "Not a mutable object!" as text
+	READ_WRITE with "Read/write failed!" as text
 define stdout as native method returning any doing:
 	Java: return System.out;
 	C#: return System.Console.Out;
@@ -145,3 +146,16 @@ define "printLine an integer" as test method doing:
 	printLine 12345 with w as writer
 and expecting: 
 	w.text = "12345\n" 
+define path as Text attribute
+define encoding as Text attribute
+
+define Url as native resource with attributes path and encoding, and bindings:
+	
+	define category bindings as:
+		Java: prompto.internet.Url
+		JavaScript: Url from module: prompto/internet/Url.js
+
+define "reads from www.prompto.org" as test method doing:
+	content = read from Url with "http://www.prompto.org" as path
+and expecting: 
+	content contains "prompto"

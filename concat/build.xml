@@ -12,6 +12,9 @@
             <path>
                <fileset dir="${eclipse.workspace}/console" includes="*.pec"/>
              </path>        	
+            <path>
+               <fileset dir="${eclipse.workspace}/internet" includes="*.pec"/>
+             </path>        	
             <filterchain>
               <expandproperties/>
             </filterchain>

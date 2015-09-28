@@ -1,0 +1,13 @@
+define path as Text attribute
+define encoding as Text attribute
+
+define Url as native resource with attributes path and encoding, and bindings:
+	
+	define category bindings as:
+		Java: prompto.internet.Url
+		JavaScript: Url from module: prompto/internet/Url.js
+
+define "reads from www.prompto.org" as test method doing:
+	content = read from Url with "http://www.prompto.org" as path
+and expecting: 
+	content contains "prompto"
