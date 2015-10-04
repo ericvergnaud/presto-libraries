@@ -9,7 +9,7 @@ define Attribute as native category with attribute name, and bindings:
 		Python3: AttributeDeclaration from module: prompto.declaration.AttributeDeclaration
 		JavaScript: AttributeDeclaration from module: prompto/declaration/AttributeDeclaration.js
 
-define findAttribute as native method receiving Text name returning Attribute doing:
+define findAttribute as native method receiving name returning Attribute doing:
 	Java: return $context.findAttribute(name);
 	C#: return $context.findAttribute(name);
 	Python2: return $context.findAttribute(name)
