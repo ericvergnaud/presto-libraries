@@ -16,6 +16,13 @@ define findAttribute as native method receiving name returning Attribute doing:
 	Python3: return $context.findAttribute(name)
 	JavaScript: return $context.findAttribute(name);
 
+define getAllAttributes as native method returning Attribute[] doing:
+	Java: return $context.getAllAttributes();
+	C#: return $context.getAllAttributes();
+	Python2: return $context.getAllAttributes()
+	Python3: return $context.getAllAttributes()
+	JavaScript: return $context.getAllAttributes();
+
 define "findAttribute id" as test method doing:
 	a = findAttribute "id"
 and expecting: 
@@ -28,8 +35,14 @@ and expecting:
 	a is an Attribute
 	a.name = "name" 
 
-define "findAttribute text" as test method doing:
+define "findAttribute text" as test method doing: 
 	a = findAttribute "text"
 and expecting: 
 	a is an Attribute
-	a.name = "text" 
+	a.name = "text"
+
+define "at least 3 items getAllAttributes" as test method doing:
+	l = getAllAttributes 
+and expecting: 
+	l is an Attribute[]
+	l.length >= 3
