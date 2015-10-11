@@ -1,6 +1,3 @@
-define id as Any attribute
-define text as Text attribute
-
 define Any as native category with attributes id and text, and bindings:
 
 	define category bindings as:

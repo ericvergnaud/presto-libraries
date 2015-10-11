@@ -1,5 +1,3 @@
-define name as Text attribute
-
 define Attribute as native category with attribute name, and bindings:
 
 	define category bindings as:
