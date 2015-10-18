@@ -1,0 +1,13 @@
+define getHttpUser as native method returning Text doing:
+	Java: return prompto.server.Server.getHttpUser();
+	C#: return prompto.server.Server.getHttpUser();
+	Python2: return getHttpUser() from module: prompto.server.Server
+	Python3: return getHttpUser() from module: prompto.server.Server
+	JavaScript: return getHttpUser(); from module: prompto/server/Server.js
+
+define getHttpSession as native method returning Document doing:
+	Java: return prompto.server.Server.getHttpSession();
+	C#: return prompto.server.Server.getHttpSession();
+	Python2: return getHttpSession() from module: prompto.server.Server
+	Python3: return getHttpSession() from module: prompto.server.Server
+	JavaScript: return getHttpSession(); from module: prompto/server/Server.js
