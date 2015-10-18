@@ -23,24 +23,24 @@ define getAllAttributes as native method returning Attribute[] doing:
 
 define "findAttribute id" as test method doing:
 	a = findAttribute "id"
-and expecting: 
+and verifying: 
 	a is an Attribute
 	a.name = "id"
 
 define "findAttribute name" as test method doing:
 	a = findAttribute "name"
-and expecting: 
+and verifying: 
 	a is an Attribute
 	a.name = "name" 
 
 define "findAttribute text" as test method doing: 
 	a = findAttribute "text"
-and expecting: 
+and verifying: 
 	a is an Attribute
 	a.name = "text"
 
 define "at least 3 items getAllAttributes" as test method doing:
 	l = getAllAttributes 
-and expecting: 
+and verifying: 
 	l is an Attribute[]
 	l.length >= 3
