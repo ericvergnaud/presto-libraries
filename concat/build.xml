@@ -5,7 +5,7 @@
     </description>
 
     <target name="default" description="sole target">
-        <concat destfile="core.pec">
+        <concat destfile="prompto.pec">
             <path>
                <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
              </path>        	
@@ -19,7 +19,31 @@
               <expandproperties/>
             </filterchain>
         </concat>
-    </target>
+        <concat destfile="core.pec">
+            <path>
+               <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
+             </path>        	
+             <filterchain>
+              <expandproperties/>
+            </filterchain>
+        </concat>
+        <concat destfile="console.pec">
+             <path>
+                <fileset dir="${eclipse.workspace}/console" includes="*.pec"/>
+              </path>        	
+             <filterchain>
+               <expandproperties/>
+             </filterchain>
+         </concat>
+        <concat destfile="internet.pec">
+             <path>
+                <fileset dir="${eclipse.workspace}/internet" includes="*.pec"/>
+              </path>        	
+             <filterchain>
+               <expandproperties/>
+             </filterchain>
+         </concat>
+   </target>
 
 
 </project>
