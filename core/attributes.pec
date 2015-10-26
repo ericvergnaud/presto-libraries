@@ -1,3 +1,8 @@
+// runtime reference of any object
 define id as Any attribute
-define name as Text attribute
-define text as Text attribute
+// database reference of stored object
+define dbId as Any attribute
+// any object has a text attribute, used for print 
+define text as storable Text attribute
+// many objects have a name, it is not unique 
+define name as storable Text attribute
