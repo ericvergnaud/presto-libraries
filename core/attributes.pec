@@ -10,3 +10,5 @@ define name as storable Text attribute
 define version as storable Text attribute
 // many objects have a user, it is not unique 
 define user as storable Text attribute
+// many objects have an image, it is not unique 
+define image as storable Image attribute
