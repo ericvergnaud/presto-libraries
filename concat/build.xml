@@ -19,7 +19,7 @@
               <expandproperties/>
             </filterchain>
         </concat>
-        <concat destfile="resources/core.pec">
+        <concat destfile="resources/Core.pec">
             <path>
                <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
              </path>        	
@@ -27,7 +27,7 @@
               <expandproperties/>
             </filterchain>
         </concat>
-        <concat destfile="resources/console.pec">
+        <concat destfile="resources/Console.pec">
              <path>
                 <fileset dir="${eclipse.workspace}/console" includes="*.pec"/>
               </path>        	
@@ -35,7 +35,7 @@
                <expandproperties/>
              </filterchain>
          </concat>
-        <concat destfile="resources/internet.pec">
+        <concat destfile="resources/Internet.pec">
              <path>
                 <fileset dir="${eclipse.workspace}/internet" includes="*.pec"/>
               </path>        	
