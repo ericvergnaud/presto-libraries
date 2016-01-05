@@ -1,0 +1,11 @@
+define now as native method returning DateTime doing:
+	Java: return org.joda.time.DateTime.now();
+	C#: return System.DateTime.Now;
+	Python2: return datetime.utcnow() from module: datetime
+	Python3: return datetime.utcnow() from module: datetime
+	JavaScript: return Date.now();
+
+define "now is a DateTime" as test method doing: 
+	a = now
+and verifying: 
+	a is a DateTime 
