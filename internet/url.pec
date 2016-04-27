@@ -1,6 +1,3 @@
-define path as Text attribute
-define encoding as Text attribute
-
 define Url as native resource with attributes path and encoding, and bindings:
 	
 	define category bindings as:

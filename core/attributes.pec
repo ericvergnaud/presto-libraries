@@ -16,3 +16,7 @@ define user as storable Text attribute with key and value index
 define image as storable Image attribute
 // many events have a timeStamp
 define timeStamp as storable DateTime attribute
+// urls, files and fragments have a path
+define path as Text attribute
+// external text sources have an encoding such as "UTF-8"
+define encoding as Text attribute
