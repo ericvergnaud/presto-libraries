@@ -41,3 +41,4 @@ define "test that readJson returns a List" as test method doing:
 and verifying:
 	o is a any[]
 	o[1].field = 122
+
