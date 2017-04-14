@@ -1,0 +1,31 @@
+define parseInteger as native method receiving Text text returning Integer doing:
+	Java: return Long.parseLong(text);
+	C#: return Int64.Parse(text);
+	Python2: return int(text)
+	Python3: return int(text)
+	JavaScript: return parseInt(text);
+
+
+define parseDecimal as native method receiving Text text returning Decimal doing:
+	Java: return Double.parseDouble(text);
+	C#: return Double.Parse(text, CultureInfo.InvariantCulture);
+	Python2: return float(text)
+	Python3: return float(text)
+	JavaScript: return parseFloat(text);
+
+
+define "parse Integer" as test method doing:
+	i = parseInteger "123"
+and verifying:
+	i = 123
+
+define "parse Integer with leading 0" as test method doing:
+	i = parseInteger "0123"
+and verifying:
+	i = 123
+
+define "parse Decimal" as test method doing:
+	i = parseDecimal "123.45"
+and verifying:
+	i = 123.45
+
