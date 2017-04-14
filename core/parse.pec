@@ -1,6 +1,6 @@
 define parseInteger as native method receiving Text text returning Integer doing:
 	Java: return Long.parseLong(text);
-	C#: return Int64.Parse(text);
+	C#: return System.Int64.Parse(text);
 	Python2: return int(text)
 	Python3: return int(text)
 	JavaScript: return parseInt(text);
@@ -8,7 +8,7 @@ define parseInteger as native method receiving Text text returning Integer doing
 
 define parseDecimal as native method receiving Text text returning Decimal doing:
 	Java: return Double.parseDouble(text);
-	C#: return Double.Parse(text, CultureInfo.InvariantCulture);
+	C#: return System.Double.Parse(text, System.Globalization.CultureInfo.InvariantCulture);
 	Python2: return float(text)
 	Python3: return float(text)
 	JavaScript: return parseFloat(text);
