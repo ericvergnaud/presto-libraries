@@ -22,3 +22,5 @@ define encoding as Text attribute
 define login as storable Text attribute with key and value index
 // many systems require a password
 define password as Text attribute
+// checked email  
+define email as Text attribute with value index
