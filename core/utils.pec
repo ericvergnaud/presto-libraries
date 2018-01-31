@@ -1,0 +1,7 @@
+// TODO: JavaScript
+define randomUUID as native method returning UUID doing:
+	Java: return java.util.UUID.randomUUID();
+	C#: return System.Guid.NewGuid();
+	Python2: return uuid4() from module: uuid
+	Python3: return uuid4() from module: uuid
+	JavaScript: return null;
