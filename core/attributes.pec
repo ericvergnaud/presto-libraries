@@ -23,4 +23,4 @@ define login as storable Text attribute with key and value index
 // many systems require a password
 define password as Text attribute
 // checked email  
-define email as Text attribute with value index
+define email as storable Text attribute with value index
