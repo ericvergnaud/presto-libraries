@@ -5,3 +5,9 @@ define randomUUID as native method returning UUID doing:
 	Python2: return uuid4() from module: uuid
 	Python3: return uuid4() from module: uuid
 	JavaScript: return null;
+
+
+define "randomUUID is not null" as test method doing:
+	uuid = randomUUID
+and verifying: 
+	uuid is a UUID or uuid is Nothing
