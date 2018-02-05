@@ -5,7 +5,12 @@
     </description>
 
     <target name="default" description="sole target">
-        <concat destfile="prompto/prompto.pec">
+        <concat destfile="appstore-libraries/AppStore.pec">
+            <path>
+               <fileset dir="${eclipse.workspace}/../prompto-platform/CodeServer/src/main/resources/libraries" includes="*.pec"/>
+             </path>        	
+        </concat>
+        <concat destfile="devcenter-prompto/prompto.pec">
             <path>
                <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
              </path>        	
@@ -22,7 +27,7 @@
               <expandproperties/>
             </filterchain>
         </concat>
-        <concat destfile="resources/libraries/Core.pec">
+        <concat destfile="runtime-libraries/Core.pec">
             <path>
                <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
              </path>        	
@@ -30,7 +35,7 @@
               <expandproperties/>
             </filterchain>
         </concat>
-        <concat destfile="resources/libraries/Console.pec">
+        <concat destfile="runtime-libraries/Console.pec">
              <path>
                 <fileset dir="${eclipse.workspace}/console" includes="*.pec"/>
               </path>        	
@@ -38,7 +43,7 @@
                <expandproperties/>
              </filterchain>
          </concat>
-        <concat destfile="resources/libraries/Internet.pec">
+        <concat destfile="runtime-libraries/Internet.pec">
              <path>
                 <fileset dir="${eclipse.workspace}/internet" includes="*.pec"/>
               </path>        	
@@ -46,7 +51,7 @@
                <expandproperties/>
              </filterchain>
          </concat>
-        <concat destfile="resources/libraries/Reader.pec">
+        <concat destfile="runtime-libraries/Reader.pec">
               <path>
                  <fileset dir="${eclipse.workspace}/reader" includes="*.pec"/>
                </path>        	
