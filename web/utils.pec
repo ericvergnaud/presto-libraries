@@ -1,0 +1,2 @@
+define alert as native method receiving Text text doing:
+	JavaScript: alert(text);
