@@ -39,6 +39,6 @@ and verifying:
 define "test that readJson returns a List" as test method doing:
 	o = readJson "[{\"field\":122}]"
 and verifying:
-	o is a any[]
+	o is a Document[]
 	o[1].field = 122
 
