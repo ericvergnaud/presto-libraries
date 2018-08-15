@@ -1,7 +1,4 @@
-define Event as native category with bindings:
-	define category bindings as:
-		JavaScript: Event
-
 define ClickEvent as native category with bindings:
 	define category bindings as:
 		JavaScript: Event
+
