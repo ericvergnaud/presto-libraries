@@ -7,7 +7,7 @@
     <target name="default" description="sole target">
         <concat destfile="appstore-libraries/AppStore.pec">
             <path>
-               <fileset dir="${eclipse.workspace}/../prompto-platform/CodeServer/src/main/resources/libraries" includes="*.pec"/>
+               <fileset dir="${eclipse.workspace}/../prompto-platform/CodeFactory/src/main/resources/libraries" includes="*.pec"/>
              </path>        	
         </concat>
         <concat destfile="devcenter-prompto/prompto.pec">
