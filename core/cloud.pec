@@ -1,0 +1,2 @@
+define getCurrentCloud as native method returning Text doing:
+	Java: return prompto.cloud.Cloud.current().name();
