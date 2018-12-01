@@ -26,4 +26,4 @@ define "sleeps for 1 second" as test method doing:
 	sleep 1000
 	end = now
 and verifying: 
-	end - start >= 'PT1S'
+	end > start + 'PT1S'
