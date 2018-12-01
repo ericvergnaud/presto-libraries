@@ -9,7 +9,7 @@ define randomUuid as native method returning Uuid doing:
 // waits for n milliseconds (consuming all CPU in JavaScript)
 define sleep as native method receiving Integer millis doing:
 	Java: java.lang.Thread.sleep(millis);
-	C#: System.Threading.Thread.Sleep(millis);
+	C#: prompto.utils.Utils.Sleep(millis);
 	Python2: sleep(millis) from module: prompto.utils.Utils
 	Python3: sleep(millis) from module: prompto.utils.Utils
 	JavaScript: sleep(millis); from module: prompto/utils/Utils.js
