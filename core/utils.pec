@@ -6,8 +6,24 @@ define randomUuid as native method returning Uuid doing:
 	Python3: return uuid4() from module: uuid
 	JavaScript: return UUID.create(); from module: prompto/intrinsic/UUID.js
 
+// waits for n milliseconds (consuming all CPU in JavaScript)
+define sleep as native method receiving Integer millis doing:
+	Java: java.lang.Thread.sleep(millis);
+	C#: System.Threading.Thread.Sleep(millis);
+	Python2: sleep(millis) from module: prompto.utils.Utils
+	Python3: sleep(millis) from module: prompto.utils.Utils
+	JavaScript: sleep(millis); from module: prompto/utils/Utils.js
+
 
 define "randomUuid is not null" as test method doing:
 	uuid = randomUuid
 and verifying: 
 	uuid is not Nothing
+
+
+define "sleeps for 1 second" as test method doing:
+	start = now
+	sleep 1000
+	end = now
+and verifying: 
+	end - start >= 'PT1S'
