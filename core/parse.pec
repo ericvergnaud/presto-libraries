@@ -106,3 +106,4 @@ define "parses Period" as test method doing:
 	p = parsePeriod "PT1S"
 and verifying:
 	p = 'PT1S'
+

@@ -9,3 +9,4 @@ define "now is a DateTime" as test method doing:
 	a = now
 and verifying: 
 	a is a DateTime 
+

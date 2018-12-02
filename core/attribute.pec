@@ -44,3 +44,4 @@ define "at least 3 items getAllAttributes" as test method doing:
 and verifying: 
 	l is an Attribute[]
 	l.count >= 3
+
