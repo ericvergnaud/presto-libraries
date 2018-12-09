@@ -24,6 +24,9 @@
                <fileset dir="${eclipse.workspace}/reader" includes="*.pec"/>
              </path>        	
             <path>
+               <fileset dir="${eclipse.workspace}/../prompto-platform/Server/src/main/resources/libraries" includes="*.pec"/>
+             </path>        	
+            <path>
                <fileset dir="${eclipse.workspace}/web" includes="*.pec"/>
              </path>        	
             <filterchain>
