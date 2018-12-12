@@ -35,7 +35,7 @@ define stderr as native method returning NativeWriter doing:
 // an abstract Writer which can be derived (unlike NativeWriter) 
 define Writer as category with methods:
 	
-define print as abstract method receiving any value
+	define print as abstract method receiving any value
 
 // the native Writer implementation 
 define nativeWriter as NativeWriter attribute
