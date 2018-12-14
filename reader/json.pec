@@ -42,3 +42,11 @@ and verifying:
 	o is a Document[]
 	o[1].field = 122
 
+define "test that readJson returns a complex Document" as test method doing:
+    json = "[{\"field\":122, \"list\": [{\"field\":123, \"doc\": {\"name\": \"John\"}}], \"doc\": { \"list\": [ 122, 233, 344] }}]"
+	o = (readJson json) as Document[]
+and verifying:
+	o is a Document[]
+	o[1].field = 122
+
+
