@@ -10,6 +10,10 @@ define setReactWidgetState as native method receiving ReactWidget w and Document
 	JavaScript: w.setState(state);
 
 
+define forceReactWidgetRender as native method receiving ReactWidget w doing:
+	JavaScript: w.forceUpdate();
+
+
 define ReactWidget as widget with methods:
 	
 	@Static
@@ -54,3 +58,5 @@ define ReactWidget as widget with methods:
 	define setState as method receiving Document state doing:
 		setReactWidgetState self with state
 
+	define forceRender as method doing:
+		forceReactWidgetRender self
