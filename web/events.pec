@@ -1,7 +1,16 @@
-define ClickEvent as native category with bindings:
+@Inlined
+define MouseEvent as native category with bindings:
 	
 	define category bindings as:
 		JavaScript: Event
+
+
+@Inlined
+define KeyboardEvent as native category with bindings:
+	
+	define category bindings as:
+		JavaScript: Event
+
 
 @Inlined
 define RadioChangedEvent as native category with bindings:
@@ -30,3 +39,11 @@ and methods:
 		JavaScript: return this.target.value;
 
 
+define MouseEventCallback as abstract method receiving MouseEvent event
+define KeyboardEventCallback as abstract method receiving KeyboardEvent event
+define RadioChangedCallback as abstract method receiving RadioChangedEvent event
+define InputChangedCallback as abstract method receiving InputChangedEvent event
+define DateChangedCallback as abstract method receiving Date value
+define ToggleChangedCallback as abstract method receiving Boolean value
+define ItemSelectedCallback as abstract method receiving Text value
+define PageSelectedCallback as abstract method receiving Integer value

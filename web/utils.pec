@@ -1,3 +1,4 @@
 define alert as native method receiving Text text doing:
 	JavaScript: alert(text);
 
+define WidgetCallback as abstract method receiving any ref
