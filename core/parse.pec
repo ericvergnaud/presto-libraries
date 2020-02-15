@@ -16,25 +16,25 @@ define parseDecimal as native method receiving Text text returning Decimal doing
 
 define parseDate as native method receiving Text text returning Date doing:
 	Java: return prompto.intrinsic.PromptoDate.parse(text);
-	C#: return prompto.value.Date.Parse(text);
-	Python2: return DateValue.Parse(text) from module: prompto.value.DateValue
-	Python3: return DateValue.Parse(text) from module: prompto.value.DateValue
+	C#: return prompto.value.DateValue.Parse(text);
+	Python2: return Date.Parse(text) from module: prompto.value.Date
+	Python3: return Date.Parse(text) from module: prompto.value.Date
 	JavaScript: return LocalDate.parse(text); from module: prompto/intrinsic/LocalDate.js
 
 
 define parseTime as native method receiving Text text returning Time doing:
 	Java: return prompto.intrinsic.PromptoTime.parse(text);
-	C#: return prompto.value.Time.Parse(text);
-	Python2: return TimeValue.Parse(text) from module: prompto.value.TimeValue
-	Python3: return TimeValue.Parse(text) from module: prompto.value.TimeValue
+	C#: return prompto.value.TimeValue.Parse(text);
+	Python2: return Time.Parse(text) from module: prompto.value.Time
+	Python3: return Time.Parse(text) from module: prompto.value.Time
 	JavaScript: return LocalTime.parse(text); from module: prompto/intrinsic/LocalTime.js
 
 
 define parseDateTime as native method receiving Text text returning DateTime doing:
 	Java: return prompto.intrinsic.PromptoDateTime.parse(text);
-	C#: return prompto.value.DateTime.Parse(text);
-	Python2: return DateTimeValue.Parse(text) from module: prompto.value.DateTimeValue
-	Python3: return DateTimeValue.Parse(text) from module: prompto.value.DateTimeValue
+	C#: return prompto.value.DateTimeValue.Parse(text);
+	Python2: return DateTime.Parse(text) from module: prompto.value.DateTime
+	Python3: return DateTime.Parse(text) from module: prompto.value.DateTime
 	JavaScript: return DateTime.parse(text); from module: prompto/intrinsic/DateTime.js
 
 
@@ -48,17 +48,17 @@ define parseUuid as native method receiving Text text returning Uuid doing:
 
 define parseVersion as native method receiving Text text returning Version doing:
 	Java: return prompto.intrinsic.PromptoVersion.parse(text);
-	C#: return prompto.value.Version.Parse(text);
-	Python2: return VersionValue.Parse(text) from module: prompto.value.VersionValue
-	Python3: return VersionValue.Parse(text) from module: prompto.value.VersionValue
+	C#: return prompto.value.VersionValue.Parse(text);
+	Python2: return Version.Parse(text) from module: prompto.value.Version
+	Python3: return Version.Parse(text) from module: prompto.value.Version
 	JavaScript: return Version.parse(text); from module: prompto/intrinsic/Version.js
 
 
 define parsePeriod as native method receiving Text text returning Period doing:
 	Java: return prompto.intrinsic.PromptoPeriod.parse(text);
-	C#: return prompto.value.Period.Parse(text);
-	Python2: return PeriodValue.Parse(text) from module: prompto.value.PeriodValue
-	Python3: return PeriodValue.Parse(text) from module: prompto.value.PeriodValue
+	C#: return prompto.value.PeriodValue.Parse(text);
+	Python2: return Period.Parse(text) from module: prompto.value.Period
+	Python3: return Period.Parse(text) from module: prompto.value.Period
 	JavaScript: return Period.parse(text); from module: prompto/intrinsic/Period.js
 
 
