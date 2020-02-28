@@ -1,0 +1,16 @@
+define readYaml as native method receiving text returning Document[] doing:
+	Java: return prompto.reader.YAMLReader.read(text);
+	C#: return prompto.reader.YAMLReader.read(text); 
+	Python2: return yamlRead(text) from module: prompto.reader.YAMLReader
+	Python3: return yamlRead(text) from module: prompto.reader.YAMLReader
+	JavaScript: return yamlRead(text); from module: prompto/reader/YAMLReader.js
+
+
+define "test that readYaml returns a complex Document" as test method doing:
+    yaml = "field: 122\ndata:\n  list:\n  - field: 123\n  - doc:\n      name: John\n      doc:\n        list:\n        - 122\n        - 233\n        - 344"
+	o = readYaml yaml
+and verifying:
+	o is a Document[]
+	o[1].field = 122
+
+
