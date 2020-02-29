@@ -14,3 +14,20 @@ and verifying:
 	o[1].field = 122
 
 
+define writeYaml as native method receiving Document[] docs returning Text doing:
+	Java: return prompto.writer.YAMLWriter.write(docs);
+	C#: return prompto.writer.YAMLWriter.write(docs); 
+	Python2: return yamlWrite(docs) from module: prompto.writer.YAMLWriter
+	Python3: return yamlWrite(docs) from module: prompto.writer.YAMLWriter
+	JavaScript: return yamlWrite(docs); from module: prompto/writer/YAMLWriter.js
+
+
+define "test that writeYaml writes a complex Document" as test method doing:
+	src = [{ field: 122, list: [ { field: 123 }, { doc: { name: "John", doc: { list: [ 122, 233, 344 ] } } } ] }]
+	yaml = writeYaml src
+    dst = readYaml yaml
+and verifying:
+	dst is a Document[]
+	dst = src
+
+
