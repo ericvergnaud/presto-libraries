@@ -1,0 +1,2 @@
+define getApplicationConfiguration as native method returning Document doing:
+	Java: return prompto.runtime.Standalone.getApplicationConfiguration();
