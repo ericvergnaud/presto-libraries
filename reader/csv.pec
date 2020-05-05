@@ -45,12 +45,12 @@ and verifying:
 	docs[2].id = "2"
 	docs[2].name = "Riou, Sylvie"
 
-define writeCsv as native method receiving Document[] docs, Text<:> columnNames = nothing, Character separator = ',', Character quote = '"' returning Text doing:
-	Java: return prompto.writer.CSVWriter.write(docs, columnNames, separator, quote);
-	C#: return prompto.writer.CSVWriter.write(docs, columnNames, separator, quote); 
-	Python2: return csvWrite(docs, columnNames, separator, quote) from module: prompto.writer.CSVWriter
-	Python3: return csvWrite(docs, columnNames, separator, quote) from module: prompto.writer.CSVWriter
-	JavaScript: return csvWrite(docs, columnNames, separator, quote); from module: prompto/writer/CSVWriter.js
+define writeCsv as native method receiving Document[] docs, Text[] columnsList, Text<:> columnNames = nothing, Character separator = ',', Character quote = '"' returning Text doing:
+	Java: return prompto.writer.CSVWriter.write(docs, columnsList, columnNames, separator, quote);
+	C#: return prompto.writer.CSVWriter.write(docs, columnsList, columnNames, separator, quote); 
+	Python2: return csvWrite(docs, columnsList, columnNames, separator, quote) from module: prompto.writer.CSVWriter
+	Python3: return csvWrite(docs, columnsList, columnNames, separator, quote) from module: prompto.writer.CSVWriter
+	JavaScript: return csvWrite(docs, columnsList, columnNames, separator, quote); from module: prompto/writer/CSVWriter.js
 
 define "writes csv to text" as test method doing:
 	doc = { "firstName": "John", "lastName": "Smith", "birthDate": '1212-12-12', "salary": 22222 }
