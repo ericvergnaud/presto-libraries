@@ -45,3 +45,15 @@ and verifying:
 	docs[2].id = "2"
 	docs[2].name = "Riou, Sylvie"
 
+define writeCsv as native method receiving Document[] docs, Text<:> columnNames = nothing, Character separator = ',', Character quote = '"' returning Text doing:
+	Java: return prompto.writer.CSVWriter.write(docs, columnNames, separator, quote);
+	C#: return prompto.writer.CSVWriter.write(docs, columnNames, separator, quote); 
+	Python2: return csvWrite(docs, columnNames, separator, quote) from module: prompto.writer.CSVWriter
+	Python3: return csvWrite(docs, columnNames, separator, quote) from module: prompto.writer.CSVWriter
+	JavaScript: return csvWrite(docs, columnNames, separator, quote); from module: prompto/writer/CSVWriter.js
+
+define "writes csv to text" as test method doing:
+	doc = { "firstName": "John", "lastName": "Smith", "birthDate": '1212-12-12', "salary": 22222 }
+	text = writeCsv with [ doc ] as docs, < "firstName": "First name", "lastName" : "Last name", "birthDate": "Birth date" > as columnNames
+and verifying: 
+	text = "First name,Last name,Birth date,salary\nJohn,Smith,1212-12-12,22222\n"
