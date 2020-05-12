@@ -1,2 +1,3 @@
 define Callback as abstract method
+define TextCallback as abstract method receiving Text text
 
