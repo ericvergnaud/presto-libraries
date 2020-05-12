@@ -1,3 +1,4 @@
 define Callback as abstract method
-define TextCallback as abstract method receiving Text text
-
+define BooleanCallback as abstract method receiving Boolean value
+define IntegerCallback as abstract method receiving Integer value
+define TextCallback as abstract method receiving Text value
