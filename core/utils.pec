@@ -39,12 +39,12 @@ define fetchBinaryResource as native method receiving path returning Blob doing:
 	JavaScript: return $context.fetchBinaryResource(path);
  
 
-define nextSequenceValue as native method receiving Text prefix returning Integer doing:
-	Java: return $context.nextSequenceValue(prefix);
-	C#: return $context.nextSequenceValue(prefix);
-	Python2: return $context.nextSequenceValue(prefix)
-	Python3: return $context.nextSequenceValue(prefix)
-	JavaScript: return $context.nextSequenceValue(prefix);
+define nextSequenceValue as native method receiving Text name returning Integer doing:
+	Java: return $context.nextSequenceValue(name);
+	C#: return $context.nextSequenceValue(name);
+	Python2: return $context.nextSequenceValue(name)
+	Python3: return $context.nextSequenceValue(name)
+	JavaScript: return $context.nextSequenceValue(name);
 
 
 define "randomUuid is not null" as test method doing:
