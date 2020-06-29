@@ -33,7 +33,7 @@ define "sleeps for 1 second" as test method doing:
 and verifying: 
 	end >= start + 'PT1S'
 
-define scheduleJob as native method receiving Callback callback, DateTime executeAt, Period repeatEvery and Text jobName = Nothing returning Integer doing:
+define scheduleJob as native method receiving Callback callback, DateTime executeAt, Period repeatEvery = Nothing and Text jobName = Nothing returning Integer doing:
 	Java: return prompto.runtime.Scheduler.schedule(callback, executeAt, repeatEvery, jobName);
 	C#: return rompto.runtime.Scheduler.schedule(callback, executeAt, repeatEvery, jobName);
 	Python2: return Scheduler.schedule(callback, executeAt, repeatEvery, jobName) from module: prompto.runtime.Scheduler
