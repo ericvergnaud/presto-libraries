@@ -18,3 +18,32 @@ define "today is a Date" as test method doing:
 and verifying: 
 	a is a Date 
 
+// waits for n milliseconds (consuming all CPU in JavaScript)
+define sleep as native method receiving Integer millis doing:
+	Java: java.lang.Thread.sleep(millis);
+	C#: prompto.utils.Utils.Sleep(millis);
+	Python2: sleep(millis) from module: prompto.utils.Utils
+	Python3: sleep(millis) from module: prompto.utils.Utils
+	JavaScript: sleep(millis); from module: prompto/utils/Utils.js
+
+define "sleeps for 1 second" as test method doing:
+	start = now
+	sleep 1000
+	end = now
+and verifying: 
+	end >= start + 'PT1S'
+
+define scheduleJob as native method receiving Callback callback, DateTime executeAt, Period repeatEvery and Text jobName = Nothing returning Integer doing:
+	Java: return prompto.runtime.Scheduler.schedule(callback, executeAt, repeatEvery, jobName);
+	C#: return rompto.runtime.Scheduler.schedule(callback, executeAt, repeatEvery, jobName);
+	Python2: return Scheduler.schedule(callback, executeAt, repeatEvery, jobName) from module: prompto.runtime.Scheduler
+	Python3: return Scheduler.schedule(callback, executeAt, repeatEvery, jobName) from module: prompto.runtime.Scheduler
+	JavaScript: return Scheduler.schedule(callback, executeAt, repeatEvery, jobName); from module: prompto/runtime/Scheduler.js
+
+define cancelJob as native method receiving Integer jobId doing:
+	Java: return prompto.runtime.Scheduler.cancel(jobId);
+	C#: return rompto.runtime.Scheduler.cancel(jobId);
+	Python2: return Scheduler.cancel(jobId) from module: prompto.runtime.Scheduler
+	Python3: return Scheduler.cancel(jobId) from module: prompto.runtime.Scheduler
+	JavaScript: return Scheduler.cancel(jobId); from module: prompto/runtime/Scheduler.js
+	
