@@ -28,6 +28,7 @@
               <expandproperties/>
             </filterchain>
         </concat>
+        <gzip src="factory-prompto/prompto.pec" destfile="factory-prompto/prompto.pec.gz" />
         <concat destfile="runtime-libraries/Core.pec">
             <path>
                <fileset dir="${eclipse.workspace}/core" includes="*.pec"/>
