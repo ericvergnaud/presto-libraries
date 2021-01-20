@@ -1,0 +1,16 @@
+define WebSocketCallback as abstract method receiving WebSocket value
+
+define openWebSocket as native method receiving Text url, AnyCallback onMessage, Callback onClose = nothing and WebSocketCallback callback = nothing doing:
+		JavaScript: openWebSocket(url, onMessage, onClose); from module: prompto/internet/WebSocket.js
+
+@Inlined
+define WebSocket as native category with bindings:
+
+    define category bindings as:
+		JavaScript: window.WebSocket
+
+and methods: 
+
+	define close as method doing:
+        JavaScript: this.close();
+	
