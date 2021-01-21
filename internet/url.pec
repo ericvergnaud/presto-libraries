@@ -1,17 +1,25 @@
 define HttpRequestMethod as enumerated Text with symbols:
-	CONNECT with "CONNECT" as value
-	DELETE with "DELETE" as value
-	GET with "GET" as value
-	HEAD with "HEAD" as value
-	OPTIONS with "OPTIONS" as value
-	PATCH with "PATCH" as value
-	POST with "POST" as value
-	PUT with "PUT" as value
-	TRACE with "TRACE" as value
+	HTTP_CONNECT with "CONNECT" as value
+	HTTP_DELETE with "DELETE" as value
+	HTTP_GET with "GET" as value
+	HTTP_HEAD with "HEAD" as value
+	HTTP_OPTIONS with "OPTIONS" as value
+	HTTP_PATCH with "PATCH" as value
+	HTTP_POST with "POST" as value
+	HTTP_PUT with "PUT" as value
+	HTTP_TRACE with "TRACE" as value
 
 define httpRequestMethod as storable HttpRequestMethod attribute
 
-define Url as storable native resource with attributes path, encoding and httpRequestMethod, and bindings:
+define HttpContentType as enumerated Text with symbols:
+	HTTP_URL_ENCODED with "application/x-www-form-urlencoded" as value
+	HTTP_FORM_DATA with "multipart/form-data" as value
+	HTTP_TEXT_PLAIN with "text/plain" as value
+	HTTP_APPLICATION_JSON with "application/json" as value
+
+define httpContentType as storable HttpContentType attribute
+
+define Url as storable native resource with attributes path, encoding, httpRequestMethod and httpContentType, and bindings:
 	
 	define category bindings as:
 		Java: prompto.internet.Url
