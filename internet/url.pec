@@ -1,4 +1,4 @@
-define HttpRequestMethod as enumerated Text with symbols:
+define HttpMethod as enumerated Text with symbols:
 	HTTP_CONNECT with "CONNECT" as value
 	HTTP_DELETE with "DELETE" as value
 	HTTP_GET with "GET" as value
@@ -9,17 +9,26 @@ define HttpRequestMethod as enumerated Text with symbols:
 	HTTP_PUT with "PUT" as value
 	HTTP_TRACE with "TRACE" as value
 
-define httpRequestMethod as storable HttpRequestMethod attribute
+define httpMethod as storable HttpMethod attribute
 
+define HttpHeader as native category with attributes name and text, and bindings:
+
+	define category bindings as:
+		Java: prompto.internet.HttpHeader
+		C#: prompto.internet.HttpHeader
+		Python2: Url from module: prompto.internet.HttpHeader
+		Python3: Url from module: prompto.internet.HttpHeader
+		JavaScript: Url from module: prompto/internet/HttpHeader.js
+
+define httpHeaders as HttpHeader[] attribute
+	
 define HttpContentType as enumerated Text with symbols:
 	HTTP_URL_ENCODED with "application/x-www-form-urlencoded" as value
 	HTTP_FORM_DATA with "multipart/form-data" as value
 	HTTP_TEXT_PLAIN with "text/plain" as value
 	HTTP_APPLICATION_JSON with "application/json" as value
 
-define httpContentType as storable HttpContentType attribute
-
-define Url as storable native resource with attributes path, encoding, httpRequestMethod and httpContentType, and bindings:
+define Url as native resource with attributes path, encoding, httpMethod and httpHeaders, and bindings:
 	
 	define category bindings as:
 		Java: prompto.internet.Url
@@ -28,8 +37,7 @@ define Url as storable native resource with attributes path, encoding, httpReque
 		Python3: Url from module: prompto.internet.Url
 		JavaScript: Url from module: prompto/internet/Url.js
 
-// many objects have an Url  
-define url as storable Url attribute
+define url as Url attribute
 
 define "reads from www.google.com" as test method doing:
 	// need a cross-domain enabled page for browser testing
