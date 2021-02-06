@@ -10,7 +10,7 @@ define setReactWidgetState as native method receiving ReactWidget w, Document st
 	JavaScript: w.setState(state, callback);
 
 
-define ReactStateAndPropsCallback as abstract method receiving Document state and Document props
+define ReactStateAndPropsCallback as abstract method receiving Document state and Document props returning Document
 
 
 define setReactWidgetState as native method receiving ReactWidget w and ReactStateAndPropsCallback callback = nothing doing:
@@ -47,10 +47,6 @@ define ReactWidget as widget with methods:
 	define getDerivedStateFromProps as method receiving Document props and Document state doing:
 		return Nothing
 		
-	@Callback
-	define getInitialState as method returning Document doing:
-		return Nothing
-	
 	@Callback
 	define componentDidMount as method doing:
 		// nothing to do		
