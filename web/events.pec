@@ -82,11 +82,26 @@ and methods:
 		JavaScript: this.preventDefault();
 		
 
+@Inlined
+define SubmitEvent as native category with bindings:
+
+	define category bindings as:
+		JavaScript: Event
+
+and methods:
+		
+	define stopPropagation as method doing:
+		JavaScript: this.stopPropagation();
+
+	define preventDefault as method doing:
+		JavaScript: this.preventDefault();
+
 define ClickEventCallback as abstract method receiving ClickEvent event
 define MouseEventCallback as abstract method receiving MouseEvent event
 define KeyboardEventCallback as abstract method receiving KeyboardEvent event
 define RadioChangedCallback as abstract method receiving RadioChangedEvent event
 define InputChangedCallback as abstract method receiving InputChangedEvent event
+define SubmitEventCallback as abstract method receiving SubmitEvent event
 define DateChangedCallback as abstract method receiving Date value
 define ToggleChangedCallback as abstract method receiving Boolean value
 define ItemSelectedCallback as abstract method receiving Any value
