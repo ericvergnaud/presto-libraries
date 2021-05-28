@@ -77,3 +77,4 @@ define "encodes and decodes uri" as test method doing:
 and verifying: 
 	encoded = "Black%20Mamba" or encoded = "Black+Mamba"
 	uri = decoded
+
