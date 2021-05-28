@@ -1,0 +1,30 @@
+define listRootPaths as native method returning Text[] doing:
+	Java: return prompto.files.Paths.listRoots();
+	C#: return prompto.files.Paths.listRoots(); 
+	Python2: return listRoots() from module: prompto.files
+	Python3: return listRoots() from module: prompto.files
+	JavaScript: return listRoots(); from module: prompto/files/Paths.js
+
+
+define "listRootPaths returns a Text[]" as test method doing:
+	roots = listRootPaths
+and verifying:
+	roots is a Text[]
+	roots.count > 0
+
+
+define listChildPaths as native method receiving Text path returning Text[] doing:
+	Java: return prompto.files.Paths.listChildren(path);
+	C#: return prompto.files.Paths.listChildren(path); 
+	Python2: return listChildren(path) from module: prompto.files
+	Python3: return listChildren(path) from module: prompto.files
+	JavaScript: return listChildren(path); from module: prompto/files/Paths.js
+
+
+define "listChildren returns a Text[]" as test method doing:
+	children = listChildren "/"
+and verifying:
+	children is a Text[]
+	children.count > 0
+
+	
