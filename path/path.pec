@@ -1,9 +1,9 @@
 define listRootPaths as native method returning Text[] doing:
-	Java: return prompto.files.Paths.listRoots();
-	C#: return prompto.files.Paths.listRoots(); 
-	Python2: return listRoots() from module: prompto.files
-	Python3: return listRoots() from module: prompto.files
-	JavaScript: return listRoots(); from module: prompto/files/Paths.js
+	Java: return prompto.path.Path.listRoots();
+	C#: return prompto.path.Path.listRoots(); 
+	Python2: return listRoots() from module: prompto.path
+	Python3: return listRoots() from module: prompto.path
+	JavaScript: return listRoots(); from module: prompto/path/Path.js
 
 
 define "listRootPaths returns a Text[]" as test method doing:
@@ -14,17 +14,72 @@ and verifying:
 
 
 define listChildPaths as native method receiving Text path returning Text[] doing:
-	Java: return prompto.files.Paths.listChildren(path);
-	C#: return prompto.files.Paths.listChildren(path); 
-	Python2: return listChildren(path) from module: prompto.files
-	Python3: return listChildren(path) from module: prompto.files
-	JavaScript: return listChildren(path); from module: prompto/files/Paths.js
+	Java: return prompto.path.Path.listChildren(path);
+	C#: return prompto.path.Path.listChildren(path); 
+	Python2: return listChildren(path) from module: prompto.path
+	Python3: return listChildren(path) from module: prompto.path
+	JavaScript: return listChildren(path); from module: prompto/path/Path.js
 
 
-define "listChildren returns a Text[]" as test method doing:
-	children = listChildren "/"
+define "listChildPaths returns a Text[]" as test method doing:
+	children = listChildPaths "/"
 and verifying:
 	children is a Text[]
 	children.count > 0
+
+define pathExists as native method receiving Text path returning Boolean doing:
+	Java: return prompto.path.Path.pathExists(path);
+	C#: return prompto.path.Path.pathExists(path); 
+	Python2: return pathExists(path) from module: prompto.path
+	Python3: return pathExists(path) from module: prompto.path
+	JavaScript: return pathExists(path); from module: prompto/path/Path.js
+
+
+define "pathExists returns a Boolean" as test method doing:
+	exists = pathExists "/"
+and verifying:
+	exists is true
+
+
+define pathIsFile as native method receiving Text path returning Boolean doing:
+	Java: return prompto.path.Path.pathIsFile(path);
+	C#: return prompto.path.Path.pathIsFile(path); 
+	Python2: return pathIsFile(path) from module: prompto.path
+	Python3: return pathIsFile(path) from module: prompto.path
+	JavaScript: return pathIsFile(path); from module: prompto/path/Path.js
+
+
+define "pathIsFile returns a Boolean" as test method doing:
+	isFile = pathIsFile "/"
+and verifying:
+	isFile is false
+	
+	
+define pathIsDirectory as native method receiving Text path returning Boolean doing:
+	Java: return prompto.path.Path.pathIsDirectory(path);
+	C#: return prompto.path.Path.pathIsDirectory(path); 
+	Python2: return pathIsDirectory(path) from module: prompto.path
+	Python3: return pathIsDirectory(path) from module: prompto.path
+	JavaScript: return pathIsDirectory(path); from module: prompto/path/Path.js
+
+
+define "pathIsDirectory returns a Boolean" as test method doing:
+	isDir = pathIsDirectory "/"
+and verifying:
+	isDir is true
+
+	
+define pathIsLink as native method receiving Text path returning Boolean doing:
+	Java: return prompto.path.Path.pathIsLink(path);
+	C#: return prompto.path.Path.pathIsLink(path); 
+	Python2: return pathIsLink(path) from module: prompto.path
+	Python3: return pathIsLink(path) from module: prompto.path
+	JavaScript: return pathIsLink(path); from module: prompto/path/Path.js
+
+
+define "pathIsLink returns a Boolean" as test method doing:
+	isLink = pathIsLink "/"
+and verifying:
+	isLink is false
 
 	
