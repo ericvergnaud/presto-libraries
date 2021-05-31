@@ -16,7 +16,7 @@
                <fileset dir="${eclipse.workspace}/internet" includes="*.pec"/>
              </path>        	
             <path>
-                <fileset dir="${eclipse.workspace}/files" includes="*.pec"/>
+                <fileset dir="${eclipse.workspace}/path" includes="*.pec"/>
               </path>        	
             <path>
                <fileset dir="${eclipse.workspace}/reader" includes="*.pec"/>
@@ -64,9 +64,9 @@
                 <expandproperties/>
               </filterchain>
           </concat>
-        <concat destfile="runtime-libraries/Files.pec">
+        <concat destfile="runtime-libraries/Path.pec">
               <path>
-                 <fileset dir="${eclipse.workspace}/files" includes="*.pec"/>
+                 <fileset dir="${eclipse.workspace}/path" includes="*.pec"/>
                </path>        	
               <filterchain>
                 <expandproperties/>
