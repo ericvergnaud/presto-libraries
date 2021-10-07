@@ -1,7 +1,7 @@
 define Any as native category with attributes id and text, and bindings:
 
 	define category bindings as:
-		Java: java.lang.Object
+		Java: prompto.intrinsic.PromptoAny
 		C#: prompto.value.AnyValue
 		Python2: AnyValue from module: prompto.value.AnyValue
 		Python3: AnyValue from module: prompto.value.AnyValue
@@ -10,16 +10,16 @@ define Any as native category with attributes id and text, and bindings:
 and methods: 
 
 	define id as getter doing:
-		Java: return System.identityHashCode(self);
-		C#: return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(self);
+		Java: return System.identityHashCode(this);
+		C#: return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
 		Python2: return id(self)
 		Python3: return id(self)
-		JavaScript: return self.id;
+		JavaScript: return this.id;
 	
 	define text as getter doing:
-		Java: return self.toString();
-		C#: return self.ToString();
+		Java: return this.toString();
+		C#: return this.ToString();
 		Python2: return str(self)
 		Python3: return str(self)
-		JavaScript: return self.toString();
+		JavaScript: return this.toString();
 
