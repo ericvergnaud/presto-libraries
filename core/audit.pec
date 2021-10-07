@@ -5,24 +5,51 @@ define isAuditEnabled as native method returning Boolean doing:
 	Python3: return $store.isAuditEnabled()
 	JavaScript: return $store.isAuditEnabled();
 
-define fetchLatestAuditMetadataId as native method receiving dbId returning Any doing:
+define fetchLatestAuditMetadataId as native method receiving DbId dbId returning Any doing:
 	Java: return $store.fetchLatestAuditMetadataId(dbId);
 	C#: return $store.FetchLatestAuditMetadataId(dbId);
 	Python2: return $store.fetchLatestAuditMetadataId(dbId)
 	Python3: return $store.fetchLatestAuditMetadataId(dbId)
 	JavaScript: return $store.fetchLatestAuditMetadataId(dbId);
 
-define fetchAllAuditMetadataIds as native method receiving dbId returning Any[] doing:
+define fetchAllAuditMetadataIds as native method receiving DbId dbId returning DbId[] doing:
 	Java: return $store.fetchAllAuditMetadataIds(dbId);
 	C#: return $store.FetchAllAuditMetadataIds(dbId);
 	Python2: return $store.fetchAllAuditMetadataIds(dbId)
 	Python3: return $store.fetchAllAuditMetadataIds(dbId)
 	JavaScript: return $store.fetchAllAuditMetadataIds(dbId);
 
-define fetchAuditMetadata as native method receiving dbId returning Document doing:
+define fetchAuditMetadata as native method receiving DbId dbId returning Document doing:
 	Java: return $store.fetchAuditMetadataAsDocument(dbId);
 	C#: return $store.FetchAuditMetadataAsDocument(dbId);
 	Python2: return $store.fetchAuditMetadataAsDocument(dbId)
 	Python3: return $store.fetchAuditMetadataAsDocument(dbId)
 	JavaScript: return $store.fetchAuditMetadataAsDocument(dbId);
 
+define fetchDbIdsAffectedByAuditMetadataId as native method receiving DbId dbId returning DbId[] doing:
+	Java: return $store.fetchDbIdsAffectedByAuditMetadataId(dbId);
+	C#: return $store.fetchDbIdsAffectedByAuditMetadataId(dbId);
+	Python2: return $store.fetchDbIdsAffectedByAuditMetadataId(dbId)
+	Python3: return $store.fetchDbIdsAffectedByAuditMetadataId(dbId)
+	JavaScript: return $store.fetchDbIdsAffectedByAuditMetadataId(dbId);
+
+define fetchLatestAuditRecord as native method receiving DbId dbId returning Document doing:
+	Java: return $store.fetchLatestAuditRecord(dbId);
+	C#: return $store.FetchLatestAuditRecord(dbId);
+	Python2: return $store.fetchLatestAuditRecord(dbId)
+	Python3: return $store.fetchLatestAuditRecord(dbId)
+	JavaScript: return $store.fetchLatestAuditRecord(dbId);
+
+define fetchAllAuditRecords as native method receiving DbId dbId returning Document[] doing:
+	Java: return $store.fetchAllAuditRecordsAsDocuments(dbId);
+	C#: return $store.FetchAllAuditRecordsAsDocuments(dbId);
+	Python2: return $store.fetchAllAuditRecordsAsDocuments(dbId)
+	Python3: return $store.fetchAllAuditRecordsAsDocuments(dbId)
+	JavaScript: return $store.fetchAllAuditRecordsAsDocuments(dbId);
+
+define fetchAuditRecordsMatching as native method receiving Document auditPredicates = nothing and Document instancePredicates = nothing returning Document[] doing:
+	Java: return $store.fetchAuditRecordsMatchingAsDocuments(auditPredicates, instancePredicates);
+	C#: return $store.FetchAuditRecordsMatchingAsDocuments(auditPredicates, instancePredicates);
+	Python2: return $store.fetchAuditRecordsMatchingAsDocuments(auditPredicates, instancePredicates)
+	Python3: return $store.fetchAuditRecordsMatchingAsDocuments(auditPredicates, instancePredicates)
+	JavaScript: return $store.fetchAuditRecordsMatchingAsDocuments(auditPredicates, instancePredicates);
