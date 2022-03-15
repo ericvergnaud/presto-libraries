@@ -1,9 +1,9 @@
-define readXml as native method receiving text returning Document doing:
-	Java: return prompto.reader.XMLReader.read(text);
-	C#: return prompto.reader.XMLReader.read(text); 
-	Python2: return xmlRead(text) from module: prompto.reader.XMLReader
-	Python3: return xmlRead(text) from module: prompto.reader.XMLReader
-	JavaScript: return xmlRead(text); from module: prompto/reader/XMLReader.js
+define readXml as native method receiving text, Boolean keepNamespaces = false and Boolean keepAttributes = false returning Document doing:
+	Java: return prompto.reader.XMLReader.read(text, keepNamespaces, keepAttributes);
+	C#: return prompto.reader.XMLReader.read(text, keepNamespaces, keepAttributes); 
+	Python2: return xmlRead(text, keepNamespaces, keepAttributes) from module: prompto.reader.XMLReader
+	Python3: return xmlRead(text, keepNamespaces, keepAttributes) from module: prompto.reader.XMLReader
+	JavaScript: return xmlRead(text, keepNamespaces, keepAttributes); from module: prompto/reader/XMLReader.js
 
 
 define "readXml returns a Document" as test method doing:
